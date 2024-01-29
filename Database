@@ -1,0 +1,92 @@
+const sqlite3 = require('sqlite3').verbose();
+const fs = require('fs');
+
+const sql = `
+CREATE TABLE IF NOT EXISTS ESOtbl (
+    UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username TEXT,
+    Email TEXT,
+    Password TEXT,
+    Preferences INT,
+    University TEXT,
+    Year INT,
+    Team TEXT,
+    Games TEXT,
+    "T&C" TEXT
+);
+
+INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('MRVN', 'Test@gmail.com', '12345678', '11', 'Reading', '1', 'Reading knight', 'Valorant', '1');
+
+INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('Tommy_T', 'tommy@gmail.com', 'qwertyuiop', '01', 'Reading', '1', 'Reading knight', 'Valorant', '1');
+
+INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('gabel', 'gabel@gmail.com', 'qwerty123', '14', 'Reading', '1', 'Reading Puggers', 'CS2', '1');
+`;
+
+const databaseFile = 'App.db';
+
+// Delete the database file if it exists
+if (fs.existsSync(databaseFile)) {
+    fs.unlinkSync(databaseFile);
+}
+
+// Connect to the database
+const db = new sqlite3.Database(databaseFile);
+
+// Create the tables
+db.exec(sql, function(err) {
+    if (err) {
+        console.error(err.message);
+    } else {
+        console.log('Tables created successfully.');
+    }
+
+    // Close the database connection
+    db.close(); // <-- Remove the extra closing parenthesis
+});
+
+// Queries the database
+function queryDatabase(database, query) {
+    const localDb = new sqlite3.Database(database);
+
+    return new Promise((resolve, reject) => {
+        localDb.all(query, [], (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+
+            localDb.close();
+        });
+    });
+}
+
+// Executes SQL statement
+function executeSql(database, sqlStatement) {
+    const localDb = new sqlite3.Database(database);
+
+    return new Promise((resolve, reject) => {
+        localDb.run(sqlStatement, function(err) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(this.lastID);
+            }
+
+            localDb.close();
+        });
+    });
+}
+
+// Example usage
+(async () => {
+    try {
+        const result = await queryDatabase(databaseFile, 'SELECT * FROM ESOtbl');
+        console.log(result);
+
+        const insertedRowId = await executeSql(databaseFile, "INSERT INTO ESOtbl (Username) VALUES ('John')");
+        console.log(`Inserted row with ID: ${insertedRowId}`);
+    } catch (error) {
+        console.error(error.message);
+    }
+})();
