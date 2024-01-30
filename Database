@@ -1,13 +1,14 @@
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
+// this is where the database is created and filler data is entered
 const sql = `
 CREATE TABLE IF NOT EXISTS ESOtbl (
     UserID INTEGER PRIMARY KEY AUTOINCREMENT,
     Username TEXT,
     Email TEXT,
     Password TEXT,
-    Preferences INT,
+    Preferences TEXT,
     University TEXT,
     Year INT,
     Team TEXT,
@@ -22,9 +23,9 @@ INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Te
 INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('gabel', 'gabel@gmail.com', 'qwerty123', '14', 'Reading', '1', 'Reading Puggers', 'CS2', '1');
 `;
 
-const databaseFile = 'App.db';
+const databaseFile = 'App.db';//Names of the database
 
-// Delete the database file if it exists
+//Deletes the database for testing purposes
 if (fs.existsSync(databaseFile)) {
     fs.unlinkSync(databaseFile);
 }
@@ -40,53 +41,5 @@ db.exec(sql, function(err) {
         console.log('Tables created successfully.');
     }
 
-    // Close the database connection
-    db.close(); // <-- Remove the extra closing parenthesis
+    db.close(); //Closes the database
 });
-
-// Queries the database
-function queryDatabase(database, query) {
-    const localDb = new sqlite3.Database(database);
-
-    return new Promise((resolve, reject) => {
-        localDb.all(query, [], (err, rows) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(rows);
-            }
-
-            localDb.close();
-        });
-    });
-}
-
-// Executes SQL statement
-function executeSql(database, sqlStatement) {
-    const localDb = new sqlite3.Database(database);
-
-    return new Promise((resolve, reject) => {
-        localDb.run(sqlStatement, function(err) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(this.lastID);
-            }
-
-            localDb.close();
-        });
-    });
-}
-
-// Example usage
-(async () => {
-    try {
-        const result = await queryDatabase(databaseFile, 'SELECT * FROM ESOtbl');
-        console.log(result);
-
-        const insertedRowId = await executeSql(databaseFile, "INSERT INTO ESOtbl (Username) VALUES ('John')");
-        console.log(`Inserted row with ID: ${insertedRowId}`);
-    } catch (error) {
-        console.error(error.message);
-    }
-})();
