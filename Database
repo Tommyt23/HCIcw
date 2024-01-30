@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS ESOtbl (
     Year INT,
     Team TEXT,
     Games TEXT,
-    "T&C" TEXT
+    "T&C" INT
 );
 
 INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('MRVN', 'Test@gmail.com', '12345678', '11', 'Reading', '1', 'Reading knight', 'Valorant', '1');
