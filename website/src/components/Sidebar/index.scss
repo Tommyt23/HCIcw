@@ -4,7 +4,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    z-index: 3;
+    z-index: 0;
     min-height: 250px;
 
     .Logo {
@@ -42,4 +42,10 @@ nav{
         bottom: 0;
         cursor: pointer;
     }
+}
+
+
+.close{
+    top: 5%;
+    right: 5%;
 }

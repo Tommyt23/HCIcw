@@ -1,9 +1,7 @@
 // import react functions
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-//import external functions
-
+import Model from 'react-modal';
 
 // import stylesheet
 import './index.scss';
@@ -11,11 +9,12 @@ import './index.scss';
 // import assets
 import Logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser, faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 const Sidebar = () => {
     const [buttonText, setButtonText] = useState('');
     const [iconSize, setIconSize] = useState('');
+    const [visible, setvisible] = useState(false)
 //    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
@@ -44,16 +43,33 @@ const Sidebar = () => {
         // no Cleanup function to allow for function to be called whenever in use
     }, []); // Empty dependency array ensures the effect runs only once on mount
 
+
+
     return (
         <div className='nav-bar'>
             <Link className='Logo' to='/'>
                 <img src={Logo} alt="logo" />
             </Link>
             <nav>
-                <button id='login-btn' >
+                <button id='login-btn' onClick={() => setvisible(true)}>
                     <FontAwesomeIcon icon={faUser} color='#ddd' style={{ fontSize: iconSize }} />
                     {buttonText}
                 </button>
+                <Model isOpen={visible} onRequestClose={() => setvisible(false)}
+                    style={{
+                    overlay: {
+                        background: "#27018C"
+                    },
+                    content:{
+                        backgroundColor: "#260943"
+                    }
+                    }}>
+                    model body
+                    <button className="close" onClick={() => setvisible(false)}>
+                        <FontAwesomeIcon icon={faCircleXmark}  color='#333' style={{fontSize: iconSize}}/>
+
+                    </button>
+                </Model>
             </nav>
         </div>
         );
