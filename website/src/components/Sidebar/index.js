@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 //import external functions
-//import Login from './Login';
+
 
 // import stylesheet
 import './index.scss';
@@ -50,7 +50,7 @@ const Sidebar = () => {
                 <img src={Logo} alt="logo" />
             </Link>
             <nav>
-                <button id='login-btn'>
+                <button id='login-btn' >
                     <FontAwesomeIcon icon={faUser} color='#ddd' style={{ fontSize: iconSize }} />
                     {buttonText}
                 </button>
