@@ -23,15 +23,15 @@ const Modal = ({open, onClose}) => {
                         <label className='username'> Username:  
                             <input type="text" />
                         </label>
-
+                        <br/>
                         <label className='email'> E-mail: 
                             <input type="email" />
                         </label>
-
+                        <br />
                         <label className='password'> Password:
                             <input type='text'/>
                         </label>
-
+                        <br />
                         <label className='year'> Year:
                             <select name='year'>
                                 <option value='1'> 1st year</option>
@@ -40,7 +40,7 @@ const Modal = ({open, onClose}) => {
                                 <option value='4'> 4th year</option>
                             </select>
                         </label>
-
+                        <br />
                         <label className='graduateType'> Graduate type:
                             <select name='graduateType'>
                                 <option value='underGraduate'> underGraduate </option>
@@ -49,7 +49,7 @@ const Modal = ({open, onClose}) => {
                             </select>
                         </label>
                     </form>
-                    
+                    <br />
                     {/*buttons to add options of what to do */}
                     <div className='btnContainer'>
                         <button className='Login'>
