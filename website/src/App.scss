@@ -1,0 +1,41 @@
+$primary-colour: #260943;
+$secondary-colour: #27018C;
+
+@import 'animate.css';
+
+//@font-face{
+//  font-family: 'Press Start 2P';
+//  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap') format('woff2'); 
+//}
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('./assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
+} 
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('./assets/fonts/OpenDyslexic-Italic.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('./assets/fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: 'opendyslexic';
+  src: url('./assets/fonts/OpenDyslexic-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+} 
+
+input, textarea{
+  font-family: "Press Start 2P", cursive;
+}
