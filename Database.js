@@ -1,10 +1,14 @@
+// Require necessary modules
 const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
-// this is where the database is created and filler data is entered
+// Database file name
+const databaseFile = 'App.db';
+
+// SQL commands for table creation and data insertion
 const sql = `
 CREATE TABLE IF NOT EXISTS ESOtbl (
-    UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER PRIMARY KEY,
     Username TEXT,
     Email TEXT,
     Password TEXT,
@@ -23,23 +27,34 @@ INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Te
 INSERT INTO ESOtbl (Username, Email, Password, Preferences, University, Year, Team, Games, "T&C") VALUES ('gabel', 'gabel@gmail.com', 'qwerty123', '14', 'Reading', '1', 'Reading Puggers', 'CS2', '1');
 `;
 
-const databaseFile = 'App.db';//Names of the database
-
-//Deletes the database for testing purposes
+// Delete the database file if it exists
 if (fs.existsSync(databaseFile)) {
     fs.unlinkSync(databaseFile);
 }
 
 // Connect to the database
-const db = new sqlite3.Database(databaseFile);
-
-// Create the tables
-db.exec(sql, function(err) {
+const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
     if (err) {
-        console.error(err.message);
+        console.error('Error opening database connection:', err.message);
     } else {
-        console.log('Tables created successfully.');
-    }
+        console.log('Connected to the database.');
 
-    db.close(); //Closes the database
+        // Execute SQL commands
+        db.exec(sql, function(err) {
+            if (err) {
+                console.error('Error executing SQL commands:', err.message);
+            } else {
+                console.log('Tables created and data inserted successfully.');
+            }
+
+            // Close the database connection
+            db.close((err) => {
+                if (err) {
+                    console.error('Error closing database connection:', err.message);
+                } else {
+                    console.log('Database connection closed.');
+                }
+            });
+        });
+    }
 });
