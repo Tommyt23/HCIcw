@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 
 // Database file name
-const databaseFile = 'App.db';
+const databaseFile = 'SES.db';
 
 // SQL commands for table creation and data insertion
 const sql = `
