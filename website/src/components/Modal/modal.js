@@ -4,7 +4,7 @@ import './modal.scss'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleXmark} from "@fortawesome/free-regular-svg-icons";
 
-const Modal = ({open, onClose}) => {
+const Modal = ({open, onClose, onLoggedIn}) => {
     if(!open) return null
     return(
 //        div to add translucent background behind login popup
@@ -52,11 +52,8 @@ const Modal = ({open, onClose}) => {
                     <br />
                     {/*buttons to add options of what to do */}
                     <div className='btnContainer'>
-                        <button className='Login'>
+                        <button className='Login' onClick={onLoggedIn}>
                             <span className='bold'>Login</span>
-                        </button>
-                        <button className='signUp'>
-                            <span className='bold'>Sign up</span>
                         </button>
                     </div>
                 </div>

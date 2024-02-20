@@ -15,7 +15,7 @@ const Sidebar = () => {
     const [buttonText, setButtonText] = useState('');
     const [iconSize, setIconSize] = useState('');
     const [visible, setvisible] = useState(false)
-//    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
         function handleResize() {
@@ -44,6 +44,12 @@ const Sidebar = () => {
     }, []); // Empty dependency array ensures the effect runs only once on mount
 
 
+    function handlelogin(){
+            setButtonText("Logged in");
+            setvisible(false);
+    }
+
+
 
     return (
         <div className='nav-bar'>
@@ -55,7 +61,7 @@ const Sidebar = () => {
                     <FontAwesomeIcon icon={faUser} color='#ddd' style={{ fontSize: iconSize }} />
                     {buttonText}
                 </button>
-                <Modal open={visible} onClose={() => setvisible(false)}/>
+                <Modal open={visible} onClose={() => setvisible(false)} onLoggedIn={handlelogin}/>
             </nav>
         </div>
         );
