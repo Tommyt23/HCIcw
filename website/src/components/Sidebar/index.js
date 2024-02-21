@@ -1,6 +1,6 @@
 // import react functions
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 // import stylesheet
 import './index.scss';
@@ -8,14 +8,15 @@ import './index.scss';
 // import assets
 import Logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser, faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons';
 import Modal from "../Modal/modal";
+import Email from "../Email";
 
 const Sidebar = () => {
     const [buttonText, setButtonText] = useState('');
     const [iconSize, setIconSize] = useState('');
     const [visible, setvisible] = useState(false)
-    const [loggedIn, setLoggedIn] = useState(false)
+    //const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
         function handleResize() {
@@ -57,12 +58,15 @@ const Sidebar = () => {
                 <img src={Logo} alt="logo" />
             </Link>
             <nav>
+                <NavLink id='email-btn' to={Email}>
+                    <FontAwesomeIcon icon={faEnvelopeOpen} color='#ddd' style={{fontSize: iconSize}} />
+                </NavLink>
+            </nav>
                 <button id='login-btn' onClick={() => setvisible(true)} >
                     <FontAwesomeIcon icon={faUser} color='#ddd' style={{ fontSize: iconSize }} />
                     {buttonText}
                 </button>
                 <Modal open={visible} onClose={() => setvisible(false)} onLoggedIn={handlelogin}/>
-            </nav>
         </div>
         );
 }
