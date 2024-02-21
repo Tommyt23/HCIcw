@@ -3,6 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import Layout from './components/Layout';
 import Email from "./components/Email";
 import Valorant from "./components/Valorant";
+import CS2 from "./components/CS2";
 
 
 function App() {
