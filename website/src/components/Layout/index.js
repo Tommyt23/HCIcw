@@ -1,12 +1,19 @@
+import React from "react"
 import './index.scss';
-import Sidebar from '../Sidebar';
 
-const Layout = () => {
-    return(
-        <>
-        <Sidebar />
-        </>
-        )
+class HomePage extends React.Component {
+    render(){
+        return(
+            <div className="Header">
+                <p>Welcome to Student Esports society </p>
+                <div className="slideshow">
+                    <img src = "valorant.png">
+
+                    </img>
+                </div>
+                </div>
+
+        );
+    }
 }
-
-export default Layout;
+export default HomePage;
