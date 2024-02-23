@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import Email from "./components/Email";
 import Valorant from "./components/Valorant";
 import CS2 from "./components/CS2";
-import About from "./components/about";
+import About from "./components/About";
 
 
 function App() {
