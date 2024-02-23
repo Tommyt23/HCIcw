@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Email from "./components/Email";
 import Valorant from "./components/Valorant";
 import CS2 from "./components/CS2";
+import About from "./components/about";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/Email" element={<Email />} />
       <Route path="/Valorant" element={<Valorant />} />
       <Route path="/CS2" element={<CS2 />} />
+      <Route path="/About" element={<About />} />
     </Routes>
     );
 }
