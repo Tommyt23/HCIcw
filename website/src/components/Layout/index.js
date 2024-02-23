@@ -1,6 +1,7 @@
 import React from "react"
 import './index.scss';
 import Sidebar from '../Sidebar';
+import valorant_esports from"../../assets/images/valorant_esports.png"
 
 class HomePage extends React.Component {
     render(){
@@ -10,7 +11,7 @@ class HomePage extends React.Component {
             <div className="Header">
                 <p>Welcome to Student Esports society </p>
                 <div className="slideshow">
-                    <img src={"valorant_esports"} alt="valorant esports">
+                    <img src={valorant_esports} alt="valorant esports">
                     </img>
                    </div>
                 </div>
