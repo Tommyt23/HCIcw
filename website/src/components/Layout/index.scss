@@ -15,36 +15,20 @@
     img{
         display:  block;
         margin: 0px auto;
-        max-width: 30%;
+        max-width: 50%;
         max-height: 5%;
     }
 }
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    user-select: none;
+.dot-container {
+    text-align: center;
 }
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-.dot {
+ .dot {
+    text-align: center;
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
+    margin: 2px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-}
-.active, .dot:hover {
-    background-color: #717171;
 }

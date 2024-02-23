@@ -1,13 +1,14 @@
-import React from "react"
+import React from "react";
 import './index.scss';
 import Sidebar from '../Sidebar';
-import valorant_esports from"../../assets/images/valorant_esports.png"
-import cs2 from "../../assets/images/cs2.jpg"
+import valorant_esports from "../../assets/images/valorant_esports.png";
+import cs2 from "../../assets/images/cs2.jpg";
 
 class HomePage extends React.Component {
     componentDidMount() {
         this.showSlides(1);
     }
+
     showSlides(slideIndex) {
         let i;
         const slides = document.getElementsByClassName("slideshow");
@@ -26,32 +27,32 @@ class HomePage extends React.Component {
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-        setTimeout(() => this.showSlides(slideIndex + 1), 2000); // Change slide every 2 seconds
+        setTimeout(() => this.showSlides(slideIndex + 1), 7000); // Change slide every 2 seconds
     }
-    render(){
-        return(
-            <>
-            <Sidebar />
-            <div className="Header">
-                <p>Welcome to Student Esports society </p>
-                </div>
-            <div className="slideshow-container">
-            <div className="slideshow">
-                <img src={valorant_esports} alt="valorant esports">
-                </img>
-                <div class="slideshow">
-                    <img src={cs2} alt="cs2">
-                    </img>
-                    </div>
-            </div>
-                <div>
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                </div>
-    </div>
-            </>
 
-        );
+    render() {
+        return (
+            <>
+                <Sidebar />
+                <div className="Header">
+                    <p>Welcome to Student Esports society</p>
+                </div>
+                <div className="slideshow-container">
+                    <div className="slideshow">
+                        <img src={valorant_esports} alt="valorant esports" />
+                    </div>
+                    <div className="slideshow">
+                        <img src={cs2} alt="cs2" />
+
+                    </div>
+                    <div className="dot-container">
+                        <span className="dot" onClick={() => this.currentSlide(1)}></span>
+                        <span className="dot" onClick={() => this.currentSlide(2)}></span>
+                    </div>
+                </div>
+            </>
+            );
     }
 }
+
 export default HomePage;
