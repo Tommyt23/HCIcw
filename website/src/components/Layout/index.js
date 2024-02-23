@@ -4,6 +4,11 @@ import './index.scss';
 class HomePage extends React.Component {
     render(){
         return(
+            <>
+            <Sidebar />
+            </>
+            )
+        return(
             <div className="Header">
                 <p>Welcome to Student Esports society </p>
                 <div className="slideshow">
