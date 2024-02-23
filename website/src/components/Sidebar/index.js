@@ -7,8 +7,6 @@ import './index.scss';
 
 // import assets
 import Logo from '../../assets/images/Logo.png';
-import Valorant_logo from '../../assets/images/Valorant_logo.svg';
-import CS2_logo from '../../assets/images/Counter-Strike_2_logo.svg.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons';
 import Modal from "../Modal/modal";
