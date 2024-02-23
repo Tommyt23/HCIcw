@@ -1,6 +1,12 @@
-// import sidebar from "../Sidebar";
+import Sidebar from "../Sidebar";
 
-const Email = () => ("hello email");
+const Email = () => {
+    return(
+        <>
+        <Sidebar />
+        </>
+        )
+};
 
 export default Email
 

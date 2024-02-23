@@ -1,5 +1,11 @@
-// import sidebar from "../Sidebar";
+import Sidebar from "../Sidebar";
 
-const About = () => ("hello about");
+const About = () => {
+    return(
+        <>
+        <Sidebar />
+        </>
+        )
+};
 
 export default About

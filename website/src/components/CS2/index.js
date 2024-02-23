@@ -1,3 +1,11 @@
-const CS2 = () => ("hello CS2");
+import Sidebar from "../Sidebar";
+
+const CS2 = () => {
+    return(
+        <>
+        <Sidebar />
+        </>
+        )
+};
 
 export default CS2;

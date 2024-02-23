@@ -1,2 +1,10 @@
-const Valorant = () => ("hello valorant");
+import Sidebar from "../Sidebar";
+
+const Valorant = () => {
+    return(
+        <>
+        <Sidebar />
+        </>
+        )
+};
 export default Valorant
