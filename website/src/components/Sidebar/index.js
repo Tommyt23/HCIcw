@@ -7,6 +7,8 @@ import './index.scss';
 
 // import assets
 import Logo from '../../assets/images/Logo.png';
+import Valorant_logo from '../../assets/images/Valorant_logo.svg';
+import CS2_logo from '../../assets/images/Counter-Strike_2_logo.svg.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons';
 import Modal from "../Modal/modal";
@@ -82,7 +84,7 @@ const Sidebar = () => {
                     classname={"CS2-link"}
                     to={"/CS2"}
                     >
-                    <p>CS2</p>
+                    <p className={"game"}>CS2</p>
                 </NavLink>
 
                 <NavLink
@@ -91,7 +93,7 @@ const Sidebar = () => {
                     classname={"val-link"}
                     to={"/Valorant"}
                     >
-                    <p>Val</p>
+                    <p className={"game valorant"}>Valorant</p>
                 </NavLink>
 
             </nav>
