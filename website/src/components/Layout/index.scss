@@ -1,28 +1,45 @@
-.Header { width: 1100px;
-    text-align: center;
-    padding-left: 50px;
-    margin: auto;
-    border: 3px solid black}
-.Header p { font-size: 20px; color: #000000; }
+.Topnav { width: auto;
+    max-height: 9%;
+    background: #000028;
+    text-align: left;
+    padding-right: 8%;
+    margin-left: 7.3%;
+    //border:solid red;
+    font-size: 32px;
+    Color: #ffffff;
+}
 
+.p{
+    width: 6%;
+    border:solid red;
+    background: linear-gradient(to left, #0000ff,#cf23cf,#eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
 .slideshow-container {
-    max-width: 1000px;
+    width: 94%;
+    left: 7.3%;
+    border:solid red;
     position: relative;
-    margin: auto;
 }
 
 .slideshow{display: none;
     img{
+        padding-left: 8%;
         display:  block;
         margin: 0px auto;
-        max-width: 50%;
+        max-width: 36%;
         max-height: 5%;
     }
 }
 .dot-container {
+    padding-left: 8%;
+    width: auto;
     text-align: center;
+    border:solid red;
 }
  .dot {
+    border:solid red;
     text-align: center;
     cursor: pointer;
     height: 15px;
