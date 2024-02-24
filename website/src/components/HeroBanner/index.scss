@@ -1,0 +1,17 @@
+.hero-banner {
+    background: url('../../assets/images/cs2hero.png') center/cover no-repeat;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+    width: 100%;
+    height: 30vh;
+
+    h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+}

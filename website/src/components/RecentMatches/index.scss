@@ -1,0 +1,67 @@
+.recent-matches {
+  padding: 0px 20px 20px 20px;
+  color: #fff;
+  border-top: 2px solid #fff;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+    url('../../assets/images/csArena.png') center/cover;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .matches-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    padding-top: 10px;
+    flex-wrap: nowrap;
+    padding-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #000028;
+      border-radius: 8px;
+      border: 2px solid #fff;
+    }
+
+    .match-card {
+      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+        url('../../assets/images/nuke.png') center/cover;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      min-width: 500px;
+      border: 2px solid #fff;
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+      &:hover {
+        transform: translateY(-10px);
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url('../../assets/images/nuke.png') center/cover;
+      }
+
+      h3 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1em;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
