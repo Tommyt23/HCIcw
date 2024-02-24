@@ -2,7 +2,7 @@ import React from "react";
 import './index.scss';
 import Sidebar from '../Sidebar';
 import valorant_esports from "../../assets/images/valorant_esports.png";
-import cs2 from "../../assets/images/cs2.jpg";
+import cs2 from "../../assets/images/cs2.png";
 
 class HomePage extends React.Component {
     componentDidMount() {

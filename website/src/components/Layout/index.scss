@@ -3,8 +3,8 @@
     background: #000028;
     text-align: left;
     padding-right: 8%;
-    margin-left: 7.3%;
-    //border:solid red;
+    margin-left: 6%;
+    border:solid red;
     font-size: 32px;
     Color: #ffffff;
 }
@@ -18,18 +18,18 @@
 }
 .slideshow-container {
     width: 94%;
-    left: 7.3%;
+    left: 6%;
     border:solid red;
     position: relative;
 }
 
 .slideshow{display: none;
     img{
-        padding-left: 8%;
+        //padding-left: 8%;
         display:  block;
         margin: 0px auto;
-        max-width: 36%;
-        max-height: 5%;
+        width: 1200px;
+        height: 300px;
     }
 }
 .dot-container {
