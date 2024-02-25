@@ -1,0 +1,11 @@
+.header-container {
+    margin-left: 6%; // Accommodate for the sidebar
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #282c34;
+    color: white;
+    border-bottom: 2px solid #fff;
+}
