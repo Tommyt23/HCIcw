@@ -1,0 +1,65 @@
+.match-details-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: min(80%, 600px);
+    height: min(80%, 600px);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    .match-details-header {
+        position: relative;
+        background: url("../../assets/images/csArena.png") no-repeat center center;
+        width: 100%;
+        height: 200px;
+        display: flex;
+
+        .team-names {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            font-size: 2em;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+        }
+    }
+
+    .match-details-body {
+        flex-grow: 1;
+        padding: 20px;
+
+        p {
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .result{
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    }
+
+    button {
+        align-self: flex-end;
+        padding: 10px 20px;
+        font-size: 1em;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin: 20px;
+        border-radius: 5px;
+    }
+}

@@ -3,10 +3,20 @@ import './index.scss';
 import Sidebar from '../Sidebar';
 import valorant_esports from "../../assets/images/valorant_esports.png";
 import cs2 from "../../assets/images/cs2.png";
+import { NavLink } from "react-router-dom";
 
 class HomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.slideTimeout = null;
+    }
+
     componentDidMount() {
         this.showSlides(1);
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.slideTimeout);
     }
 
     showSlides(slideIndex) {
@@ -27,29 +37,45 @@ class HomePage extends React.Component {
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-        setTimeout(() => this.showSlides(slideIndex + 1), 7000); // Change slide every 2 seconds
+        setTimeout(() => this.showSlides(slideIndex + 1), 7000); // Change slide every 7 seconds
+    }
+
+    currentSlide(index) {
+        // You can define functionality related to selecting a specific slide here
+        // For example, you can pause the slideshow or navigate to a specific slide
     }
 
     render() {
         return (
             <>
-                <Sidebar />
-                <div className="Topnav">
-                    <p className="p">SES</p>
-                </div>
-                <div className="slideshow-container">
-                    <div className="slideshow">
+            <Sidebar />
+            <div className="Topnav">
+                <p className="p">SES</p>
+            </div>
+            <div className="slideshow-container">
+                <div className="slideshow">
+                    <NavLink
+                        exact="true"
+                        className="Valorant-link"
+                        to="/Valorant"
+                        >
                         <img src={valorant_esports} alt="valorant esports" />
-                    </div>
-                    <div className="slideshow">
-                        <img src={cs2} alt="cs2" />
-
-                    </div>
-                    <div className="dot-container">
-                        <span className="dot" onClick={() => this.currentSlide(1)}></span>
-                        <span className="dot" onClick={() => this.currentSlide(2)}></span>
-                    </div>
+                    </NavLink>
                 </div>
+                <div className="slideshow">
+                    <NavLink
+                        exact="true"
+                        className="CS2-link"
+                        to="/CS2"
+                        >
+                        <img src={cs2} alt="cs2" />
+                    </NavLink>
+                </div>
+                <div className="dot-container">
+                    <span className="dot" onClick={() => this.currentSlide(1)}></span>
+                    <span className="dot" onClick={() => this.currentSlide(2)}></span>
+                </div>
+            </div>
             </>
             );
     }
