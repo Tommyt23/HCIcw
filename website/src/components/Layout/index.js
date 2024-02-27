@@ -8,36 +8,26 @@ import { NavLink } from "react-router-dom";
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            slideIndex: 0
+        };
         this.slideTimeout = null;
     }
 
     componentDidMount() {
-        this.showSlides(1);
+        this.showSlides();
     }
 
     componentWillUnmount() {
         clearTimeout(this.slideTimeout);
     }
 
-    showSlides(slideIndex) {
-        let i;
-        const slides = document.getElementsByClassName("slideshow");
-        const dots = document.getElementsByClassName("dot");
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        if (slideIndex < 1) {
-            slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(() => this.showSlides(slideIndex + 1), 7000); // Change slide every 7 seconds
+    showSlides() {
+        this.slideTimeout = setTimeout(() => {
+            this.setState(prevState => ({
+                slideIndex: (prevState.slideIndex + 1) % 2 // Assuming you have 2 slides
+            }), this.showSlides);
+            }, 5000); // Change slide every 7 seconds
     }
 
     currentSlide(index) {
@@ -46,6 +36,8 @@ class HomePage extends React.Component {
     }
 
     render() {
+        const { slideIndex } = this.state;
+
         return (
             <>
             <Sidebar />
@@ -53,7 +45,7 @@ class HomePage extends React.Component {
                 <p className="p">SES</p>
             </div>
             <div className="slideshow-container">
-                <div className="slideshow">
+                <div className="slideshow" style={{ display: slideIndex === 0 ? 'block' : 'none' }}>
                     <NavLink
                         exact="true"
                         className="Valorant-link"
@@ -62,7 +54,7 @@ class HomePage extends React.Component {
                         <img src={valorant_esports} alt="valorant esports" />
                     </NavLink>
                 </div>
-                <div className="slideshow">
+                <div className="slideshow" style={{ display: slideIndex === 1 ? 'block' : 'none' }}>
                     <NavLink
                         exact="true"
                         className="CS2-link"
@@ -72,8 +64,8 @@ class HomePage extends React.Component {
                     </NavLink>
                 </div>
                 <div className="dot-container">
+                    <span className="dot" onClick={() => this.currentSlide(0)}></span>
                     <span className="dot" onClick={() => this.currentSlide(1)}></span>
-                    <span className="dot" onClick={() => this.currentSlide(2)}></span>
                 </div>
             </div>
             </>
