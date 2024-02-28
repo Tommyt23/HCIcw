@@ -15,13 +15,13 @@ const Valorant = () => {
         {/*<div className="valo">*/}
         {/*    <img src={valorant_esports} alt="valorant esports" />*/}
         {/*    </div>*/}
-        <div className = "results">
+        <div className = "container">
             <img src={breeze} alt="breeze"></img>
             <div className="Teams">Furia vs NRG</div>
-            <div className="Date">16/2/2024</div>
-            <div className="Type">Best of 3</div>
-            <div className="score">0-2</div>
-            <div className="event">vct americas</div>
+            <div className="Date">Date: 16/2/2024</div>
+            <div className="Type">Type: Best of 3</div>
+            <div className="score">Score: 0-2</div>
+            <div className="event">Event: vct americas</div>
         </div>
         </>
         )
