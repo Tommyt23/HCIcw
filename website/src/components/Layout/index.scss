@@ -4,14 +4,13 @@
     text-align: left;
     padding-right: 8%;
     margin-left: 8%;
-    border:solid red;
+    border: solid #000028;
     font-size: 32px;
     Color: #ffffff;
 }
 
 .p{
     width: 6%;
-    border:solid red;
     background: linear-gradient(to left, #0000ff,#cf23cf,#eedd44);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -19,27 +18,24 @@
 .slideshow-container {
     width: 94%;
     left: 6%;
-    border:solid red;
     position: relative;
+    top: -15px;
 }
 
 .slideshow{display: none;
     img{
         padding-left: 2%;
         display:  block;
-        margin: 0px auto;
-        width: 1130px;
+        width: 1140px;
         height: 300px;
     }
 }
 .dot-container {
-    padding-left: 8%;
+    padding-right: 2%;
     width: auto;
     text-align: center;
-    border:solid red;
 }
  .dot {
-    border:solid red;
     text-align: center;
     cursor: pointer;
     height: 15px;

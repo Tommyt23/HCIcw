@@ -1,8 +1,8 @@
 import React from "react";
 import './index.scss';
 import Sidebar from '../Sidebar';
-import valorant_esports from "../../assets/images/valorant_esports.png";
-import cs2 from "../../assets/images/cs2.png";
+import ValorantHero from "../../assets/images/ValorantHero.png";
+import cs2hero from "../../assets/images/cs2hero.png";
 import { NavLink } from "react-router-dom";
 
 class HomePage extends React.Component {
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
                         className="Valorant-link"
                         to="/Valorant"
                         >
-                        <img src={valorant_esports} alt="valorant esports" />
+                        <img src={ValorantHero} alt="valorant esports" />
                     </NavLink>
                 </div>
                 <div className="slideshow" style={{ display: slideIndex === 1 ? 'block' : 'none' }}>
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
                         className="CS2-link"
                         to="/CS2"
                         >
-                        <img src={cs2} alt="cs2" />
+                        <img src={cs2hero} alt="cs2" />
                     </NavLink>
                 </div>
                 <div className="dot-container">
