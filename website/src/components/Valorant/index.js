@@ -5,6 +5,7 @@ import "./valorant.scss";
 import ValorantHero from "../../assets/images/ValorantHero.png";
 import breeze from "../../assets/images/breeze.png";
 import sunset from "../../assets/images/sunset.png";
+import ValoArena from "../../assets/images/ValoArena.png";
 import Header from "../Header";
 const Valorant = () => {
     const title = 'Valorant';
