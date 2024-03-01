@@ -1,20 +1,22 @@
-.Topnav { width: auto;
+.Topnav {
+    width: auto;
     max-height: 9%;
     background: #000028;
     text-align: left;
     padding-right: 8%;
-    margin-left: 8%;
+    margin-left: 6%;
     border: solid #000028;
     font-size: 32px;
-    Color: #ffffff;
+    color: #ffffff; /* Corrected */
 }
 
-.p{
+.p {
     width: 6%;
-    background: linear-gradient(to left, #0000ff,#cf23cf,#eedd44);
+    background: linear-gradient(to left, #0000ff, #cf23cf, #eedd44);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
+
 .slideshow-container {
     width: 94%;
     left: 6%;
@@ -22,20 +24,24 @@
     top: -15px;
 }
 
-.slideshow{display: none;
-    img{
+.slideshow {
+    display: none;
+
+    img {
         padding-left: 2%;
-        display:  block;
+        display: block;
         width: 1140px;
         height: 300px;
     }
 }
+
 .dot-container {
     padding-right: 2%;
     width: auto;
     text-align: center;
 }
- .dot {
+
+.dot {
     text-align: center;
     cursor: pointer;
     height: 15px;
