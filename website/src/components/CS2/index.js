@@ -3,6 +3,7 @@ import Header from '../Header';
 import HeroBanner from '../HeroBanner';
 import RecentMatches from '../RecentMatches';
 import MatchDetailsOverlay from '../MatchDetailsOverlay';
+import cs2hero from '../../assets/images/cs2hero.png'
 import '../../index.css'
 import './index.scss';
 
@@ -58,7 +59,7 @@ const CS2 = () => {
         <div>
             <Header title={title} />
             <main>
-                <HeroBanner />
+                <HeroBanner banner={cs2hero} altText={"CS2"} />
                 <RecentMatches
                     onMatchCardClick={handleMatchCardClick}
                     recentMatchesData={recentMatchesData}

@@ -1,5 +1,12 @@
+/* Gabe: Adds a margin to the left of the page so the page doesn't display underneath the sidebar, I'm sure there's a better way but I don't know it */
+main {
+    margin-left: max(100px,6%);
+}
+
+/* --- Gabe: This is not needed anymore as the component imports its own styling ---
+        Also I removed the ending for your comment lines so I can just comment the whole block
 .valo{
-    /* this is the image for the top of the valo page*/
+    /* this is the image for the top of the valo page
     img{
         width: 1142px;
         height: 265px;
@@ -7,9 +14,10 @@
         border: 3px solid white;
     }
 }
+
 .background{
-    /*this the background image
-    be careful when edditing as the container width and height will change*/
+    /* this the background image
+    be careful when edditing as the container width and height will change
     position: relative;
     background-image: url("../../assets/images/ValoArena.png");
     width: 100%;
@@ -18,7 +26,7 @@
 
 
     .container {
-        /* this is the container for the left image */
+        /* this is the container for the left image
         border: 2px solid white;
         margin-top: 5%;
         margin-left: 13%;
@@ -32,14 +40,14 @@
             filter: brightness(125%);
         }
     img{
-            /* the setting for the image to fit in the container */
+            /* the setting for the image to fit in the container
             border-radius: 10px;
             width: 100%;
             height: 100%;
         }
     }
     .container2 {
-        /* this is the container for the right image */
+        /* this is the container for the right image
         position: relative;
         border: 2px solid white;
         margin-top:5%;
@@ -53,7 +61,7 @@
             filter: brightness(125%);
         }
     img{
-            /* the setting for the image to fit in the container */
+            /* the setting for the image to fit in the container
             border-radius: 10px;
             width: 100%;
             height: 100%;
@@ -62,7 +70,7 @@
 
     .Teams{
         /* this is the text for the team text
-        where you adjust the text position and size*/
+        where you adjust the text position and size
         position: absolute;
         top: 8%;
         font-size: 30px;
@@ -71,7 +79,7 @@
     }
     .score {
         /* this is the text for the score text
-        where you adjust the text position and size*/
+        where you adjust the text position and size
         top: 30%;
         font-size: 16px;
         position: absolute;
@@ -80,7 +88,7 @@
 
     .Date {
         /* this is the text for the date text
-        where you adjust the text position and size*/
+        where you adjust the text position and size
         position: absolute;
         top: 45%;
         font-size: 16px;
@@ -89,7 +97,7 @@
 
     .event {
         /* this is the text for the event text
-        where you adjust the text position and size*/
+        where you adjust the text position and size
         top: 60%;
         font-size: 16px;
         position: absolute;
@@ -98,10 +106,11 @@
 
     .Type {
         /* this is the text for the type text
-        where you adjust the text position and size*/
+        where you adjust the text position and size
         top: 75%;
         font-size: 16px;
         position: absolute;
         color: white;
     }
 }
+*/
