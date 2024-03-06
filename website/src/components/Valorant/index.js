@@ -4,7 +4,6 @@ import Sidebar from "../Sidebar";
 import "./valorant.scss";
 import ValorantHero from "../../assets/images/ValorantHero.png";
 import breeze from "../../assets/images/breeze.png";
-import sunset from "../../assets/images/sunset.png";
 import ValoArena from "../../assets/images/ValoArena.png";
 import Header from "../Header";
 import HeroBanner from "../HeroBanner";
@@ -39,11 +38,30 @@ const Valorant = () => {
             event: 'VCT EMEA',
             score: '2-0',
             id: 2
+        },
+        {
+            team1: 'SEN',
+            team2: '100 thieves',
+            date: '20-02-2024',
+            type: 'Best of 3',
+            event: 'VCT Americas',
+            score: '2-1',
+            id: 3
+        },
+        {
+            team1: 'SEN',
+            team2: 'NRG',
+            date: '03-03-2024',
+            type: 'Best of 3',
+            event: 'VCT Americas',
+            score: '2-1',
+            id: 3
         }
     ];
 
     return(
         <>
+        <div className="scroll">
             {/* Gabe: Removed the sidebar component here because it is embedded inside the Header component */}
             <Header title={title} />
             {/*this recives the title Valorant and adds it to the top of the page*/}
@@ -92,6 +110,7 @@ const Valorant = () => {
                 {/*</div>*/}
                 {/* --- End of comment block --- */}
             </main>
+            </div>
         </>
         )
 };

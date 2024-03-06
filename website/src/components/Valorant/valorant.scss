@@ -1,7 +1,11 @@
 /* Gabe: Adds a margin to the left of the page so the page doesn't display underneath the sidebar, I'm sure there's a better way but I don't know it */
+.scroll{
+    overflow: auto
+}
 main {
     margin-left: max(100px,6%);
 }
+
 
 /* --- Gabe: This is not needed anymore as the component imports its own styling ---
         Also I removed the ending for your comment lines so I can just comment the whole block
